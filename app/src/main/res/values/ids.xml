@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="glide_tag_id" type="id" />
+    <item name="view" type="id" />
+    <item name="tv_delete" type="id" />
+    <item name="button35" type="id" />
+    <item name="button36" type="id" />
+    <item name="button37" type="id" />
+    <item name="button38" type="id" />
+    <item name="button39" type="id" />
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="车位详情"/>
+
+    <TextView
+        android:id="@+id/tv_state_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableLeft="@mipmap/ic_release"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:padding="18dp"
+        android:text="车位正在审核中"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_park_name"
+        style="@style/ShareParkDetailTv.top"
+        android:text="停车场名称 :"/>
+
+    <TextView
+        android:id="@+id/tv_stall_name"
+        style="@style/ShareParkDetailTv.top"
+        android:text="\u3000\u3000车位号 :"/>
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:visibility="gone"
+        style="@style/ShareParkDetailTv.top"
+        android:text="\u3000失败原因 : 请与客服联系"/>
+
+   <!-- <Button
+        android:id="@+id/btn_retry"
+        android:visibility="gone"
+        style="@style/BigBtn"
+        android:layout_marginTop="20dp"
+        android:text="重新发布"/>-->
+</LinearLayout>

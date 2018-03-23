@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">出行停车</string>
+    <string name="default_city">泉州</string>
+    <string name="tv_introduce_title">中国智能停车领航者</string>
+    <string name="app_introduce">\u3000\u3000出行停车app是南威软件有限公司投资建设和运营的停车导航平台。出行停车app是一款专为驾车一族提供便捷、准确、可靠的停车服务的手机软件，可实现周边停车场车位查询、手机支付停车费、停车场内找车位等功能。</string>
+    <string name="register_protocol">我已阅读并接受《来停车停车服务协议》</string>
+    <string name="head_img">头像</string>
+    <string name="digits_input">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-1234567890</string>
+    <string-array name="recharge_num">
+        <item>充20元</item>
+        <item>充50元</item>
+        <item>充100元</item>
+        <item>充200元</item>
+        <item>充300元</item>
+        <item>充500元</item>
+        <item>充800元</item>
+        <item>充1000元</item>
+    </string-array>
+    <string name="title_activity_brand_of_car">BrandOfCarActivity</string>
+    <string name="car_check_mgs">&#160;•&#160;行驶证仅供证明使用，不会公开给任何组织和个人\n&#160;•&#160;审核中不可修改 \n&#160;•&#160;人工审核，需要一个工作日\n&#160;•&#160;如需帮助，请拨打 0595–68288366</string>
+    <string name="car_checking_mgs">&#160;•&#160;行驶证仅供证明使用，不会公开给任何组织和个人\n&#160;•&#160;审核中不可修改\n&#160;•&#160;人工审核，需要一个工作日</string>
+    <string name="plateNum">\u3000车牌号 :</string>
+    <string name="hotline">0595–68288366</string>
+    <string name="if_back">&#xe6a2;</string>
+    <string name="if_cancel">&#xe605;</string>
+    <string name="park_over_attention">请于付款后15分钟内离场，超时将加收停车费</string>
+    <string name="title_activity_park_record_details_for_suc_and_leave">
+        ParkRecordDetailsForSucAndLeave
+    </string>
+</resources>

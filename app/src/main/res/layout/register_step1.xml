@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutStep1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:showIn="@layout/activity_register">
+
+    <ImageView
+        android:id="@+id/iv_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:background="@drawable/shape_login_card_bg"
+        android:scaleType="centerInside"
+        android:src="@drawable/register_step1" />
+
+    <com.nlinks.parkdemo.widget.EditTextClear
+        android:id="@+id/et_username"
+        style="@style/Login.UserName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_et_height" />
+
+    <RelativeLayout
+        android:id="@+id/rl_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_et_height"
+        android:layout_marginLeft="@dimen/login_align"
+        android:layout_marginRight="@dimen/login_align" >
+
+        <EditText
+            android:id="@+id/et_sms"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:drawableLeft="@mipmap/login_code"
+            android:drawablePadding="10dp"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="6"/>
+
+        <TextView
+            android:id="@+id/tv_getCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@id/et_sms"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_rec_r2_blue_blue"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="获取验证码"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+</LinearLayout>

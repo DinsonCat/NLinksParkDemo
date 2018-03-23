@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:right_button_text="包月记录"
+        app:right_button_visible="true"
+        app:title_text="出行停车月卡" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:elevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/windowBackground"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <EditText
+                    android:id="@+id/etInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_medium"
+                    android:background="@drawable/shape_rec_r999_white_aaffffff"
+                    android:drawableLeft="@mipmap/icon_home_seach_left"
+                    android:drawablePadding="8dp"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:hint="搜索您想要的停车场"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="@dimen/spacing_medium"
+                    android:paddingRight="@dimen/spacing_medium"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="当前位置"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <FrameLayout
+            android:id="@+id/emptyViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:id="@+id/iv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/empty_normal" />
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/srl_refresher"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.nlinks.parkdemo.widget.recycleview.EmptyRecyclerView
+                    android:id="@+id/rv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

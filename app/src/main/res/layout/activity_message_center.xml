@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="消息中心"/>
+
+    <FrameLayout
+        android:id="@+id/id_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <RadioGroup
+        android:id="@+id/rg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/selector_mc_message"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:text="消息"
+            android:textColor="@drawable/selector_mc_tv_color"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_information"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_mc_information"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:text="资讯"
+            android:textColor="@drawable/selector_mc_tv_color"
+            android:textSize="16sp"/>
+    </RadioGroup>
+</LinearLayout>

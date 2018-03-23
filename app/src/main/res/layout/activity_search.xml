@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_search_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_bar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/spacing_medium"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/fh"/>
+
+        <TextView
+            android:id="@+id/tv_bar_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/spacing_medium"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_bar_submit"
+            android:layout_toRightOf="@id/iv_bar_back"
+            android:background="@drawable/edittext_white_bg">
+
+            <ImageView
+                android:id="@+id/iv_bar_voice_input"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="6dp"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_home_voice_input"/>
+
+            <EditText
+                android:id="@+id/et_bar_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/iv_bar_voice_input"
+                android:background="@color/transparent"
+                android:drawableLeft="@mipmap/icon_home_seach_left"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:singleLine="true"
+                android:textColorHint="@color/text_hint"
+                android:textSize="13dp"/>
+
+            <!--<View-->
+            <!--android:layout_width="1px"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_toRightOf="@id/et_bar_input"-->
+            <!--android:background="@color/divider"/>-->
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search_history"
+        android:layout_marginTop="@dimen/title_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search_poi"
+        android:layout_marginTop="@dimen/title_height"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

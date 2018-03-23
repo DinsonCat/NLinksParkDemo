@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_rec_ededed_fdfdff"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <TextView
+        android:id="@+id/descOrderNum"
+        style="@style/MonthlyRecordText"
+        android:drawableLeft="@drawable/ddbh"
+        android:text="订单编号" />
+
+    <TextView
+        android:id="@+id/tvOrderNum"
+        style="@style/MonthlyRecordText"
+        android:layout_alignParentRight="true"
+        android:text="订单编号" />
+
+    <TextView
+        android:id="@+id/descPayChannel"
+        style="@style/MonthlyRecordText"
+        android:layout_below="@id/descOrderNum"
+        android:drawableLeft="@drawable/zzfs"
+        android:text="支付方式" />
+
+    <TextView
+        android:id="@+id/tvPayChannel"
+        style="@style/MonthlyRecordText"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/descOrderNum"
+        android:text="支付方式" />
+
+    <TextView
+        android:id="@+id/descPayTime"
+        style="@style/MonthlyRecordText"
+        android:layout_below="@+id/descPayChannel"
+        android:drawableLeft="@mipmap/sj"
+        android:text="支付时间" />
+
+    <TextView
+        android:id="@+id/tvPayTime"
+        style="@style/MonthlyRecordText"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/descPayChannel"
+        android:layout_marginBottom="12dp"
+        android:text="支付时间" />
+
+
+</RelativeLayout>

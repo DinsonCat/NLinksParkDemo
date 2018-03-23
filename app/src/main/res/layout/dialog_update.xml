@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="match_parent"
+	android:background="@color/transparent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/ll_update_dialog"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/iv_update_close"
+		android:orientation="vertical">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:scaleType="fitCenter"
+			android:src="@mipmap/update_header"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@mipmap/update_background"
+			android:orientation="vertical"
+			android:paddingLeft="36dp"
+			android:paddingRight="36dp">
+
+			<TextView
+				android:id="@+id/tv_update_version_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:singleLine="true"
+				android:textColor="@color/text_secondary"
+				android:textSize="13sp"/>
+
+			<TextView
+				android:id="@+id/tv_update_message"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:gravity="center_vertical"
+				android:lineSpacingExtra="15dp"
+				android:textColor="@color/text_secondary"
+				android:textSize="13sp"/>
+
+			<TextView
+				android:id="@+id/tv_update_immediately"
+				android:layout_width="wrap_content"
+				android:layout_height="34dp"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="15dp"
+				android:background="@drawable/update_dialog_button"
+				android:gravity="center"
+				android:paddingLeft="35dp"
+				android:paddingRight="35dp"
+				android:text="立即更新"
+				android:textColor="@color/white"
+				android:textSize="15dp"/>
+		</LinearLayout>
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:scaleType="fitCenter"
+			android:src="@mipmap/update_foot_corners"/>
+	</LinearLayout>
+
+	<ImageView
+		android:id="@+id/iv_update_close"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignRight="@id/ll_update_dialog"
+		android:layout_marginRight="15dp"
+		android:adjustViewBounds="true"
+		android:src="@mipmap/update_close"/>
+
+	<!--这个ImageView和对应的图片，是跟关闭的圈一样的高度，用来对齐蜻蜓的-->
+	<ImageView
+		android:id="@+id/iv_update_close_top"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:adjustViewBounds="true"
+		android:src="@mipmap/update_close_top"/>
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/iv_update_close_top"
+		android:layout_centerHorizontal="true"
+		android:adjustViewBounds="true"
+		android:src="@mipmap/update_header_top"/>
+
+</RelativeLayout>

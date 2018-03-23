@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<com.nlinks.parkdemo.widget.CommonTitleBar
+		style="@style/TitleBarStyle"
+		app:left_button_visible="true"
+		app:title_text="订单详情"/>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/white"
+				android:padding="@dimen/spacing_medium">
+
+				<TextView
+					android:id="@+id/tv_item_park_name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginRight="@dimen/spacing_medium"
+					android:layout_toLeftOf="@+id/tv_item_park_price"
+					android:textColor="@color/text_primary"
+					android:textSize="17sp"/>
+
+				<TextView
+					android:id="@+id/tv_item_park_location"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tv_item_park_name"
+					android:layout_marginRight="@dimen/spacing_medium"
+					android:layout_toLeftOf="@+id/tv_item_park_price"
+					android:drawableLeft="@mipmap/icon_park_list_location"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:textColor="@color/text_hint"
+					android:textSize="11sp"/>
+
+				<TextView
+					android:id="@+id/tv_item_park_status"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:textColor="@color/money_orange"
+					android:textSize="15sp"/>
+			</RelativeLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1px"
+				android:background="@color/divider"/>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/new_gray_background"
+				android:padding="@dimen/spacing_medium">
+
+				<TextView
+					android:id="@+id/tvt_appointment_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@mipmap/appointment_time"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="预约时间"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_appointment_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_latest_out_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_parking_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_appointment_time"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_enter_time"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="入场时间"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_parking_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_parking_time"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_latest_out_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_latest_out_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_parking_time"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_enter_time"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="预约出场时间"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_latest_out_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_latest_out_time"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_latest_out_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_actual_out_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_latest_out_time"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_enter_time"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="实际出场时间"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_actual_out_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_actual_out_time"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_latest_out_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_car_code"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_actual_out_time"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_car_code"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="车牌号"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_car_code"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_car_code"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_latest_out_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_pre_payment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_car_code"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_pre_payment"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="预约停车费"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_pre_payment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_pre_payment"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_latest_out_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+			</RelativeLayout>
+
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1px"
+				android:background="@color/divider"/>
+
+			<RelativeLayout
+				android:id="@+id/rl_timeout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/spacing_medium"
+				android:background="@color/white">
+
+				<TextView
+					android:id="@+id/tvt_timeout"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_timeout"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="超时时间"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_timeout"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_timeout"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_marginRight="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_timeout"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_timeout_payment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_timeout"
+					android:layout_margin="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_timeout"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="超时停车费"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_timeout_payment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_timeout_payment"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_marginRight="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_timeout"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:layout_alignParentTop="true"
+					android:background="@color/divider"/>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:layout_below="@id/tvt_timeout"
+					android:background="@color/divider"/>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1px"
+					android:layout_below="@id/tvt_timeout_payment"
+					android:background="@color/divider"/>
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="@dimen/spacing_medium">
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@mipmap/appointment_warn_tips"
+					android:singleLine="true"
+					android:text="温馨小提示"
+					android:textColor="@color/text_secondary"
+					android:textSize="13sp"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:drawableLeft="@mipmap/appointment_tint_point"
+					android:singleLine="true"
+					android:text="地锁降下后2分钟内车辆未驶入将重新升起"
+					android:textColor="@color/text_hint"
+					android:textSize="11sp"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:drawableLeft="@mipmap/appointment_tint_point"
+					android:singleLine="true"
+					android:text="请在最迟出场时间前离场，避免超时"
+					android:textColor="@color/text_hint"
+					android:textSize="11sp"/>
+
+				<TextView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="3dp"
+					android:drawableLeft="@mipmap/appointment_tint_point"
+					android:singleLine="true"
+					android:text="车辆驶出后地锁将自动升起"
+					android:textColor="@color/text_hint"
+					android:textSize="11sp"/>
+			</LinearLayout>
+
+			<Button
+				android:id="@+id/btn_appointment_submit"
+				style="@style/BigBtn"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="85dp"/>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/title_temp"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:right_button_text="编辑"
+        app:right_button_visible="true"
+        app:title_text="车辆管理"/>
+
+    <Button
+        android:id="@+id/btn_add_car"
+        style="@style/BigBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:onClick="onClickAddCar"
+        android:text="添加车辆" />
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_add_car"
+        android:layout_below="@id/title_temp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sv_content"
+                android:lineSpacingExtra="5dp"
+                android:padding="@dimen/spacing_medium"
+                android:text="＊ 自动支付功能开启后，车辆离开停车场时自动使用钱包支付，无需手动缴费，且优先扣除优惠券！"
+                android:textColor="@color/text_hint"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_add_car"
+        android:layout_below="@id/titlebar"
+        android:scaleType="center"
+        android:src="@mipmap/share_parking_nodata"
+        android:visibility="gone"/>
+</RelativeLayout>
+

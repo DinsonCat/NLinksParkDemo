@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/spacing_medium"
+    android:paddingRight="@dimen/spacing_medium"
+    android:paddingTop="80dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/sfbz"
+        android:drawablePadding="5dp"
+        android:text="收费标准"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_charge_standard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rec_ededed_fdfdff"
+        android:padding="20dp"
+        android:text="无"
+        android:textColor="@color/text_secondary"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/tcjl"
+        android:drawablePadding="5dp"
+        android:text="停车记录"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rec_ededed_fdfdff"
+        android:orientation="vertical"
+        android:padding="7dp">
+
+        <LinearLayout
+            android:id="@+id/ll_msg_plate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/cp_small"
+                android:drawablePadding="5dp"
+                android:text="车牌号码"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tv_msg_plate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:gravity="right"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_msg_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/rcsj_small"
+                android:drawablePadding="5dp"
+                android:text="入场时间"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tv_msg_in"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:gravity="right"
+                android:text="----/--/-- --:--:--"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ccsj_small"
+                android:drawablePadding="5dp"
+                android:text="出场时间"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tv_msg_out"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:gravity="right"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/sj_small"
+                android:drawablePadding="5dp"
+                android:text="停车时长"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tv_msg_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:gravity="right"
+                android:text="--"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_park_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/tcfy_small"
+                android:drawablePadding="5dp"
+                android:text="停车费用"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tv_msg_park_money"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:gravity="right"
+                android:text="￥--.--"
+                android:textColor="@color/money_orange"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_haspay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/tcfy_small"
+                android:drawablePadding="5dp"
+                android:text="已支付"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tv_msg_haspay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:gravity="right"
+                android:text="￥--.--"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_msg_coupon_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="7dp"
+           android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/yhq_small"
+                android:drawablePadding="5dp"
+                android:text="优惠券"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tv_msg_coupon_money"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@mipmap/right"
+                android:drawablePadding="5dp"
+                android:gravity="right"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <TextView
+        android:id="@+id/tv_pay_money_already"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/zfje"
+        android:drawablePadding="5dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="10dp"
+        android:visibility="gone"
+        android:background="@drawable/item_white_divider_normal"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+
+</LinearLayout>

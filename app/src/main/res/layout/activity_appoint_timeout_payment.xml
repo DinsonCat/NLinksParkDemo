@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<com.nlinks.parkdemo.widget.CommonTitleBar
+		android:id="@+id/title_temp"
+		style="@style/TitleBarStyle"
+		app:left_button_visible="true"
+		app:title_text="订单详情"/>
+
+	<Button
+		android:id="@+id/btn_pay_now"
+		style="@style/BigBtn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="@dimen/spacing_medium"
+		android:layout_marginLeft="@dimen/spacing_medium"
+		android:layout_marginRight="@dimen/spacing_medium"
+		android:text="立即支付"/>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@id/btn_pay_now"
+		android:paddingBottom="@dimen/spacing_medium"
+		android:layout_below="@id/title_temp">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/windowBackground"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/tv_park_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:drawableLeft="@mipmap/appointment_header_park_name"
+				android:drawablePadding="@dimen/text_drawable_padding"
+				android:gravity="center_vertical"
+				android:paddingBottom="7dp"
+				android:paddingLeft="@dimen/spacing_medium"
+				android:paddingRight="@dimen/spacing_medium"
+				android:paddingTop="13dp"
+				android:text="@string/app_name"
+				android:textColor="@color/text_primary"
+				android:textSize="16sp"/>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/new_gray_background"
+				android:padding="@dimen/spacing_medium">
+
+				<TextView
+					android:id="@+id/tvt_appointment_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@mipmap/appointment_time"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="预约出场时间"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_appointment_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_spend_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_out_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_appointment_time"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_enter_time"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="实际出场时间"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_out_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_out_time"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_spend_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_spend_time"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_out_time"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appoint_timeout_spend"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="超时时长"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_spend_time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_spend_time"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_spend_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_car_code"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_spend_time"
+					android:layout_marginTop="@dimen/spacing_medium"
+					android:drawableLeft="@mipmap/appointment_car_code"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="车牌号"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_car_code"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_car_code"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@+id/tvt_spend_time"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+			</RelativeLayout>
+
+			<View style="@style/HorizontalLine"/>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:background="@color/new_gray_background"
+				android:padding="@dimen/spacing_medium">
+
+				<TextView
+					android:id="@+id/tvt_actual_payment"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@mipmap/appointment_pre_payment"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:text="实付金额"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tv_actual_payment"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignTop="@id/tvt_actual_payment"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toRightOf="@id/tvt_actual_payment"
+					android:gravity="right"
+					android:singleLine="true"
+					android:textColor="@color/colorPrimary"
+					android:textSize="14sp"/>
+			</RelativeLayout>
+
+			<View style="@style/HorizontalLine"/>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:drawableLeft="@mipmap/appointment_header_park_name"
+				android:drawablePadding="@dimen/text_drawable_padding"
+				android:gravity="center_vertical"
+				android:paddingBottom="7dp"
+				android:paddingLeft="@dimen/spacing_medium"
+				android:paddingRight="@dimen/spacing_medium"
+				android:paddingTop="13dp"
+				android:text="支付方式"
+				android:textColor="@color/text_primary"
+				android:textSize="16sp"/>
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/new_gray_background"
+				android:paddingLeft="@dimen/spacing_medium"
+				android:paddingRight="@dimen/spacing_medium"
+				android:paddingTop="@dimen/spacing_medium">
+
+				<TextView
+					android:id="@+id/tvt_pay_wallet"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:drawableLeft="@drawable/payment_wallet"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:text="钱包支付"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<ImageView
+					android:id="@+id/iv_check_wallet_status"
+					android:layout_width="15dp"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:adjustViewBounds="true"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:src="@mipmap/check_circle_selected"/>
+
+				<TextView
+					android:id="@+id/tv_pay_wallet"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignBaseline="@id/tvt_pay_wallet"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toLeftOf="@id/iv_check_wallet_status"
+					android:layout_toRightOf="@+id/tvt_pay_wallet"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:singleLine="true"
+					android:text="(余额：0.00元)"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_pay_wechat"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_pay_wallet"
+					android:drawableLeft="@drawable/payment_wetchat"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:text="微信支付"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<ImageView
+					android:id="@+id/iv_check_wechat_status"
+					android:layout_width="15dp"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_alignTop="@id/tvt_pay_wechat"
+					android:adjustViewBounds="true"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:src="@mipmap/check_circle_normal"/>
+
+				<TextView
+					android:id="@+id/tv_pay_wechat"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignBaseline="@id/tvt_pay_wechat"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toLeftOf="@id/iv_check_wallet_status"
+					android:layout_toRightOf="@+id/tvt_pay_wechat"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+				<TextView
+					android:id="@+id/tvt_pay_alipay"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/tvt_pay_wechat"
+					android:drawableLeft="@drawable/payment_alipay"
+					android:drawablePadding="@dimen/text_drawable_padding"
+					android:gravity="center_vertical"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:text="支付宝支付"
+					android:textColor="@color/text_primary"
+					android:textSize="14sp"/>
+
+				<ImageView
+					android:id="@+id/iv_check_alipay_status"
+					android:layout_width="15dp"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_alignTop="@id/tvt_pay_alipay"
+					android:adjustViewBounds="true"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:src="@mipmap/check_circle_normal"/>
+
+				<TextView
+					android:id="@+id/tv_pay_alipay"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignBaseline="@id/tvt_pay_alipay"
+					android:layout_marginLeft="@dimen/spacing_medium"
+					android:layout_toLeftOf="@id/iv_check_wallet_status"
+					android:layout_toRightOf="@+id/tvt_pay_alipay"
+					android:paddingBottom="@dimen/spacing_medium"
+					android:singleLine="true"
+					android:textColor="@color/text_secondary"
+					android:textSize="14sp"/>
+
+			</RelativeLayout>
+
+		</LinearLayout>
+	</ScrollView>
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="添加车辆"/>
+
+    <ScrollView
+        android:id="@+id/sv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titlebar"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:drawableLeft="@mipmap/ic_car_qust"
+                android:drawablePadding="5dp"
+                android:padding="@dimen/spacing_medium"
+                android:text="请选择您的车辆品牌"
+                android:textColor="@color/text_hint"/>
+
+            <FrameLayout
+                android:id="@+id/fl_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/spacing_medium"
+                android:paddingLeft="@dimen/spacing_medium"
+                android:paddingRight="@dimen/spacing_medium">
+
+                <TextView
+                    android:id="@+id/tv_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_rec_r5_d5_fa"
+                    android:drawableRight="@mipmap/right"
+                    android:padding="@dimen/spacing_medium"
+                    android:textSize="16sp"/>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:drawableLeft="@mipmap/ic_car"
+                android:drawablePadding="5dp"
+                android:padding="@dimen/spacing_medium"
+                android:text="请绑定真实有效的车牌号"
+                android:textColor="@color/text_hint"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <!--车牌的布局--><include layout="@layout/layout_plate"/>
+
+                <CheckBox
+                    android:id="@+id/cb_nev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:button="@drawable/selector_cb_pay"
+                    android:padding="@dimen/spacing_medium"
+                    android:text="新能源车牌"
+                    android:textColor="@color/text_hint"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+            <Button
+                style="@style/BigBtn"
+                android:layout_marginTop="30dp"
+                android:onClick="onClickSave"
+                android:text="确认添加"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/kbView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#d1d5da"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:keyBackground="@drawable/selector_btn_plate_key_bg"
+        android:keyTextColor="@android:color/black"
+        android:keyTextSize="18sp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:shadowColor="#ffffff"
+        android:shadowRadius="0.0"/>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.nlinks.parkdemo.widget.CommonTitleBar
+            style="@style/TitleBarStyle"
+            android:fitsSystemWindows="false"
+            app:ancestorFitsSystemWindow="true"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:left_button_visible="true"
+            app:title_text="停车场列表"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.nlinks.parkdemo.widget.PagerTab
+            android:id="@+id/pt_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height_normal"
+            android:background="@color/white"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

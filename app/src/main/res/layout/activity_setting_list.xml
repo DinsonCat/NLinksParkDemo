@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@drawable/shape_divider_h"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="设置" />
+
+
+    <ViewStub
+        android:id="@+id/vs_logined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/setting_logined" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/CenterItemTv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableRight="@null"
+            android:text="Wifi下自动更新离线地图" />
+
+        <com.nlinks.parkdemo.widget.SwitchButton
+            android:id="@+id/sb_ios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="@dimen/spacing_medium"
+            app:AnimationDuration="300"
+            app:BackDrawable="@drawable/ios_back_drawable"
+            app:BackMeasureRatio="1.4"
+            app:ThumbDrawable="@drawable/ios_thumb_selector"
+            app:ThumbMarginBottom="-8dp"
+            app:ThumbMarginLeft="-5dp"
+            app:ThumbMarginRight="-5dp"
+            app:ThumbMarginTop="-2.5dp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_common_problems"
+        style="@style/CenterItemTv"
+        android:text="常见问题"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_update_vs"
+        style="@style/CenterItemTv"
+        android:text="版本更新" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CenterItemTv"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:drawableRight="@null"
+            android:text="当前版本" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            style="@style/CenterItemTv"
+            android:layout_width="wrap_content"
+            android:drawableRight="@null" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_about_us"
+        style="@style/CenterItemTv"
+        android:text="关于我们" />
+
+
+    <Button
+        android:id="@+id/btn_logout"
+        style="@style/BigBtn"
+        android:layout_marginTop="20dp"
+        android:onClick="doLogoutClick"
+        android:text="退出登录"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/easter_egg"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+</LinearLayout>

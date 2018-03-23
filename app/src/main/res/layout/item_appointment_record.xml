@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:padding="@dimen/spacing_medium">
+
+		<TextView
+			android:id="@+id/tv_item_park_name"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="@dimen/spacing_medium"
+			android:layout_toLeftOf="@+id/tv_item_park_price"
+			android:textColor="@color/text_primary"
+			android:textSize="17sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_park_location"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tv_item_park_name"
+			android:layout_marginRight="@dimen/spacing_medium"
+			android:layout_marginTop="5dp"
+			android:layout_toLeftOf="@+id/tv_item_park_price"
+			android:drawableLeft="@mipmap/icon_park_list_location"
+			android:drawablePadding="@dimen/text_drawable_padding"
+			android:gravity="center_vertical"
+			android:textColor="@color/text_primary"
+			android:textSize="11sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_park_price"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:textColor="@color/state_red"
+			android:textSize="17sp"
+			android:textStyle="bold"/>
+	</RelativeLayout>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1px"
+		android:background="@color/divider"/>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/new_gray_background"
+		android:padding="@dimen/spacing_medium">
+
+		<TextView
+			android:id="@+id/tvt_appointment_time"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:drawableLeft="@mipmap/icon_park_bussiness_hours"
+			android:drawablePadding="@dimen/text_drawable_padding"
+			android:gravity="center_vertical"
+			android:text="最迟出场时间"
+			android:textColor="@color/text_primary"
+			android:textSize="14sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_park_date0"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/spacing_medium"
+			android:layout_toRightOf="@id/tvt_appointment_time"
+			android:gravity="right"
+			android:singleLine="true"
+			android:textColor="@color/text_hint"
+			android:textSize="14sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_title1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tvt_appointment_time"
+			android:layout_marginTop="@dimen/spacing_medium"
+			android:drawableLeft="@mipmap/icon_park_list_rest"
+			android:drawablePadding="@dimen/text_drawable_padding"
+			android:gravity="center_vertical"
+			android:text="出场时间"
+			android:textColor="@color/text_primary"
+			android:textSize="14sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_park_date1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignTop="@id/tv_item_title1"
+			android:layout_marginLeft="@dimen/spacing_medium"
+			android:layout_toRightOf="@id/tvt_appointment_time"
+			android:gravity="right"
+			android:singleLine="true"
+			android:textColor="@color/text_hint"
+			android:textSize="14sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_title2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/tv_item_title1"
+			android:layout_marginTop="@dimen/spacing_medium"
+			android:drawableLeft="@mipmap/icon_park_list_rest"
+			android:drawablePadding="@dimen/text_drawable_padding"
+			android:gravity="center_vertical"
+			android:text="车牌号"
+			android:textColor="@color/text_primary"
+			android:textSize="14sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_park_car_code"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignTop="@id/tv_item_title2"
+			android:layout_marginLeft="@dimen/spacing_medium"
+			android:layout_toRightOf="@id/tvt_appointment_time"
+			android:gravity="right"
+			android:singleLine="true"
+			android:textColor="@color/text_hint"
+			android:textSize="14sp"/>
+
+	</RelativeLayout>
+
+	<View
+		android:id="@+id/v_split_line"
+		android:layout_width="match_parent"
+		android:layout_height="1px"
+		android:background="@color/divider"/>
+
+	<RelativeLayout
+		android:id="@+id/rl_appointment_car_status"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white"
+		android:padding="@dimen/spacing_medium">
+
+		<TextView
+			android:id="@+id/tv_item_temp0"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="@dimen/spacing_medium"
+			android:text="车辆状态"
+			android:textColor="@color/text_secondary"
+			android:textSize="17sp"/>
+
+		<TextView
+			android:id="@+id/tv_item_car_status"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_toRightOf="@id/tv_item_temp0"
+			android:textColor="@color/colorPrimary"
+			android:textSize="17sp"/>
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:src="@mipmap/icon_right"/>
+	</RelativeLayout>
+
+</LinearLayout>

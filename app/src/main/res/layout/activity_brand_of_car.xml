@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context="com.nlinks.parkdemo.module.usercenter.managecar.BrandOfCarActivity">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="车辆品牌"/>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titlebar"
+        android:scrollbars="none"/>
+
+    <com.nlinks.parkdemo.widget.SideLetterBar
+        android:id="@+id/side_letter_bar"
+        android:layout_width="36dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/titlebar"/>
+
+    <!--右边滑块的滑动英文字母布局-->
+    <TextView
+        android:id="@+id/tv_letter_overlay"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_rec_round_cc646464"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+</RelativeLayout>

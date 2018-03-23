@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rg_plate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/spacing_medium"
+    android:layout_marginRight="@dimen/spacing_medium"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <RadioButton style="@style/PlateRadio.start" />
+
+    <RadioButton style="@style/PlateRadio" />
+
+    <RadioButton style="@style/PlateRadio" />
+
+    <RadioButton style="@style/PlateRadio" />
+
+    <RadioButton style="@style/PlateRadio" />
+
+    <RadioButton style="@style/PlateRadio" />
+
+    <RadioButton style="@style/PlateRadio" />
+
+    <RadioButton style="@style/PlateRadio.end" />
+
+</RadioGroup>

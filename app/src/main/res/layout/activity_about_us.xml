@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/title_temp"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="关于我们"/>
+
+    <ImageView
+        android:id="@+id/iv_temp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/title_temp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/tv_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_temp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/tv_introduce_title"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_temp"
+        android:layout_marginTop="23dp"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="@dimen/spacing_medium"
+        android:text="@string/app_introduce"
+        android:textColor="@color/text_hint"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_protocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_company"
+        android:gravity="center_horizontal"
+        android:paddingBottom="5dp"
+        android:text="出行停车停车用户服务协议"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"/>
+
+    <View
+        android:id="@+id/easter_egg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/title_temp" />
+</RelativeLayout>

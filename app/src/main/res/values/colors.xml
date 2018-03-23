@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#FF7624</color>
+	<color name="colorPrimaryDark">#FF7624</color>
+	<color name="colorAccent">#FF7624</color>
+	<color name="windowBackground">#fff0f0f0</color>
+
+	<color name="global_title_text">#ffffff</color>
+
+	<color name="payment_yellow">#ffffb514</color>
+	<color name="mainactivity_yellow">#fdb614</color>
+	<color name="userhead_circle">#ff74b5ff</color>
+
+	<color name="map_mark_pink">#FA5643</color>
+	<color name="map_mark_cyan">#02B177</color>
+	<color name="map_mark_yellow">#ffF8B600</color>
+	<color name="map_accuracy_circle_fill">#334287ff</color>
+	<color name="share_window_background">#eaeff3</color>
+	<color name="alpha_background">#79000000</color>
+
+	<color name="coupon_yellow">#f2b51c</color>
+	<color name="coupon_gray">#dcdddd</color>
+	<color name="coupon_green">#40b794</color>
+
+	<color name="grey">#FFECECEC</color>
+	<color name="darkgrey">#333333</color>
+	<color name="white">#ffffff</color>
+	<color name="black">#FF000000</color>
+	<color name="transparent">#00000000</color>
+
+	<!-- 一号字体颜色 -->
+	<color name="text_primary">#ff333333</color>
+	<!-- 二号字体颜色 -->
+	<color name="text_secondary">#ff666666</color>
+	<!--提示字体颜色-->
+	<color name="text_hint">#ff999999</color>
+	<!-- 分割线颜色 -->
+	<color name="divider">#e0e0e0</color>
+
+	<color name="new_gray_background">#fbfbfb</color>
+	<color name="green_appointment">#1bad19</color>
+	<color name="money_orange">#fbb531</color>
+	<color name="money_yellow">#fefa03</color>
+	<color name="money_red">#fd5900</color>
+	<color name="money_gold">#fdf1a5</color>
+
+	<!--分享车位状态颜色-->
+	<color name="share_green">#59e072</color>
+	<color name="share_blue">#4287ff</color>
+	<color name="share_grey">#888888</color>
+	<color name="share_red">#ff6057</color>
+	<color name="state_red">#f54034</color>
+
+	<color name="user_head_border">#40ffffff</color>
+</resources>

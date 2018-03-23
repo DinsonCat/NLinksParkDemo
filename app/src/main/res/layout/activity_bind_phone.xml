@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nlinks.parkdemo.module.login.view.BindPhoneActivity">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@id/titlebar"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="绑定手机号"/>
+
+    <TextView
+        android:id="@+id/tv_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp"
+        android:text="为了您的账号安全，请绑定手机号"
+        android:textColor="@color/money_orange"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/ForgetPwd.Normal"
+        android:layout_width="match_parent"
+        android:drawableLeft="@mipmap/login_phone"
+        android:hint="请输入手机号"
+        android:maxLength="11"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_login_sms"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_et_height"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium">
+
+        <EditText
+            android:id="@+id/et_sms"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:drawableLeft="@mipmap/login_code"
+            android:drawablePadding="10dp"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLength="6"/>
+
+        <TextView
+            android:id="@+id/tv_getCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@id/et_sms"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_rec_r2_blue_blue"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="获取验证码"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_commit"
+        style="@style/BigBtn"
+        android:layout_marginTop="30dp"
+        android:text="完成"/>
+</LinearLayout>

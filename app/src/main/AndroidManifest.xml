@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nlinks.parkdemo">
+
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- bugly begin -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- bugly end -->
+    <!-- iflytek begin -->
+    <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 获取当前wifi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序改变网络连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 读取手机信息权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 读取联系人权限，上传联系人需要用到此权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 摄相头权限，拍照需要用到 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <!-- iflytek end -->
+    <application
+        android:name=".global.GlobalApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.nlinks.parkdemo.global.GlobalGlideMoudle"
+            android:value="GlideModule" />
+        <!-- baidu map begin 0 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="rUTdUzrUSwrwLndSvA3ieX7F52e2tGwT" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <!-- baidu map end   0 -->
+        <!-- alipay begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <!-- alipay end -->
+        <!-- weixin pay begin -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- weixin pay end -->
+        <!-- qq添加以下2个activity -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 修改为自己应用的 APP ID，如果你的 APP ID 是123456，那么android:scheme="tencent123456" -->
+                <data android:scheme="tencent1106023273" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- qq end -->
+        <!-- 后台接口APPKEY -->
+        <meta-data
+            android:name="API_APPKEY"
+            android:value="clientapp" />
+        <!-- 后台接口APPSECRET -->
+        <meta-data
+            android:name="API_APPSECRET"
+            android:value="123456" />
+
+        <activity
+            android:name=".module.home.SplashActivity"
+            android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".module.park.ParkDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.park.ParkDetailBaiduActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.park.ParkListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 系统下载通知 -->
+        <receiver android:name=".module.update.ApkDownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />
+            </intent-filter>
+        </receiver>
+        <!-- ——————————————————————————公共模块—————————————————————————————————————— -->
+        <activity
+            android:name=".module.home.view.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 主页面 -->
+        <activity
+            android:name=".module.login.view.LoginActivity"
+            android:screenOrientation="portrait" />
+        <!-- 登录页面 -->
+        <activity
+            android:name=".module.login.view.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <!-- 注册页面 -->
+        <!-- 用户协议页面 -->
+        <!-- 设置密码页面 -->
+        <!-- 浏览器页面 -->
+        <activity
+            android:name=".module.base.WebViewNormalActivity"
+            android:screenOrientation="portrait" />
+        <!-- 浏览器页面 -->
+        <activity
+            android:name=".module.base.WebViewPromotionActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 浏览器页面 -->
+        <activity
+            android:name=".module.home.GuideActivity"
+            android:screenOrientation="portrait" />
+        <!-- 引导页面 -->
+        <activity
+            android:name=".module.base.TestActivity"
+            android:screenOrientation="portrait" />
+        <!-- 活动中心 -->
+        <activity
+            android:name=".module.home.ActivitiesActivity"
+            android:screenOrientation="portrait" />
+        <!-- 测试页面 -->
+        <!-- ——————————————————————————用户中心—————————————————————————————————————— -->
+        <!-- 用户中心页面 -->
+        <activity
+            android:name=".module.usercenter.UserCenterActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 我的钱包页面 -->
+        <activity
+            android:name=".module.usercenter.walletmoney.WalletMoneyActivity"
+            android:screenOrientation="portrait" />
+        <!-- 充值页面 -->
+        <activity
+            android:name=".module.usercenter.walletmoney.RechargeActivity"
+            android:screenOrientation="portrait" />
+        <!-- 钱包明细页面 -->
+        <activity
+            android:name=".module.usercenter.walletmoney.WalletMoneyDetailActivity"
+            android:screenOrientation="portrait" />
+        <!-- 停车券页面 -->
+        <activity
+            android:name=".module.coupon.ParkingCouponActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged|adjustPan" />
+        <!-- 车辆管理页面 -->
+        <activity
+            android:name=".module.usercenter.managecar.ManageCarActivity"
+            android:screenOrientation="portrait" />
+        <!-- 添加车辆页面 -->
+        <activity
+            android:name=".module.usercenter.managecar.AddCarPlateActivity"
+            android:screenOrientation="portrait" />
+        <!-- 意见反馈页面 -->
+        <activity
+            android:name=".module.usercenter.suggestion.SuggestionActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <!-- 设置页面 -->
+        <activity
+            android:name=".module.usercenter.setting.SettingListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 修改密码页面 -->
+        <activity
+            android:name=".module.usercenter.setting.UpdatePwdActivity"
+            android:screenOrientation="portrait" />
+        <!-- 关于我们页面 -->
+        <activity
+            android:name=".module.usercenter.setting.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <!-- 账号管理页面 -->
+        <activity
+            android:name=".module.usercenter.account.ManageAccountActivity"
+            android:screenOrientation="portrait" />
+        <!-- 添加共享车位页面 -->
+        <activity
+            android:name=".module.usercenter.shareparking.AddShareParkActivity"
+            android:screenOrientation="portrait" />
+        <!-- 共享车位详情页面 -->
+        <activity
+            android:name=".module.usercenter.shareparking.DetailErrorCheckActivity"
+            android:screenOrientation="portrait" />
+        <!-- 共享车位发布中页面 -->
+        <activity
+            android:name=".module.usercenter.shareparking.DetailSentOutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.park.navi.NaviActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.messagecenter.MessageCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.parkinformation.ParkInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.parkrecord.ParkRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.myfollow.MyFollowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.search.SearchLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.appointment.AppointmentRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.appointment.AppointmentRecordDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.shareparking.ShareParkingMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.shareparking.ReleaseParkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.appointment.AppointmentParkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.shareparking.DetailReleaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.appointment.AppointmentParkSpotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.base.PaymentSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.appointment.AppointmentPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.appointment.AppointTimeoutPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.parkrecord.ParkRecordDeatilActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.park.ParkingPaymentActivity"
+            android:screenOrientation="portrait" />
+        <!-- 成为蜻蜓会员 -->
+        <!-- ——————————————————————————服务—————————————————————————————————————— -->
+        <service android:name=".service.PushIntentService" />
+        <service android:name=".service.SplashDownLoadService" />
+        <!-- 个推 用户自定义服务继承自GTIntentService,作为SDK与APP桥梁服务,用来接收各种消息和命令回复 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.service.message" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".module.usercenter.managecar.BrandOfCarActivity"
+            android:label="@string/title_activity_brand_of_car"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".module.usercenter.managecar.BrandOfCarL2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.managecar.AuthenticationCarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.managecar.CheckingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.managecar.ClipLicenseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.managecar.AuthenticationByHandActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.login.view.ForgetPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.login.view.BindPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.messagecenter.PushMessageDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.monthly.MonthlyListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged|adjustPan" />
+        <activity
+            android:name=".module.usercenter.monthly.MonthlyParkDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.monthly.MonthlyOrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.monthly.MonthlyOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.walletmoney.MonthCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.walletmoney.MonthCardDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.monthly.MonthlyApplyForActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.monthly.MonthlyPaymentActivity"
+            android:screenOrientation="portrait" />
+        <!-- 云锁控制测试 -->
+        <activity
+            android:name=".module.usercenter.shareparking.CloudTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".module.usercenter.parkrecord.ParkRecordDetailsForSucAndLeaveAty"
+            android:label="@string/title_activity_park_record_details_for_suc_and_leave"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".module.usercenter.parkrecord.ParkRecordDetailsForNoPayAty" />
+        <activity android:name=".module.usercenter.parkrecord.ParkRecordOrderDetailsAty"/>
+    </application>
+</manifest>

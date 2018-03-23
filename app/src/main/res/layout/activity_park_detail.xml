@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:right_button_drawable="@drawable/icon_favorite_not_yet"
+        app:right_button_visible="true"
+        app:title_text="停车场详情" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/bg_default_park" />
+
+            <com.nlinks.parkdemo.widget.mzbanner.MZBannerView
+                android:id="@+id/MZbanner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:indicatorAlign="center"
+                app:open_mz_mode="false" />
+
+            <RelativeLayout
+                android:id="@+id/rl_tmp_park_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/MZbanner"
+                android:background="@drawable/item_white_divider_normal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:id="@+id/tv_park_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:drawableLeft="@mipmap/park_icon"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_park_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/tv_park_name"
+                    android:layout_marginLeft="@dimen/spacing_medium"
+                    android:layout_toRightOf="@id/tv_park_name"
+                    android:background="@drawable/shape_park_type"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_park_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tv_park_name"
+                    android:layout_below="@id/tv_park_name"
+                    android:drawableLeft="@mipmap/icon_park_list_location"
+                    android:drawablePadding="5dp"
+                    android:maxLines="1"
+                    android:textColor="@color/text_hint"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_num"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/rl_tmp_park_info"
+                android:background="@color/white"
+                android:divider="@drawable/shape_divider_v"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/tv_park_count"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_park_rest"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/jumpToMonthlyParkDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_num"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:drawableLeft="@mipmap/wd_cfby"
+                android:drawablePadding="5dp"
+                android:drawableRight="@mipmap/right"
+                android:padding="@dimen/spacing_medium"
+                android:text="错峰包月"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/tv_tmp_park_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jumpToMonthlyParkDetails"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/item_white_divider_normal"
+                android:drawableLeft="@mipmap/tcfy_big"
+                android:drawablePadding="5dp"
+                android:padding="@dimen/spacing_medium"
+                android:text="收费标准"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_park_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_tmp_park_price"
+                android:background="@color/white"
+                android:padding="@dimen/spacing_medium"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/navigation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:text="立即导航"
+                android:textColor="@color/colorPrimary" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/parkAppoint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="5dp"
+                android:text="预约车位"
+                android:textColor="@color/white" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

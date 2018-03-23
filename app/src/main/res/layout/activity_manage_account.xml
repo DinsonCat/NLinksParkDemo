@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="用户信息" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_medium">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/head_img"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:transitionName="transition_img" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:src="@mipmap/right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CenterItemTv.left"
+            android:text="昵称" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            style="@style/CenterItemTv.right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CenterItemTv.left"
+            android:text="性别" />
+
+        <TextView
+            android:id="@+id/tv_sex"
+            style="@style/CenterItemTv.right" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CenterItemTv.left"
+            android:text="账号" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            style="@style/CenterItemTv.right"
+            android:drawableRight="@null" />
+    </LinearLayout>
+</LinearLayout>

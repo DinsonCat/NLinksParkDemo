@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.nlinks.parkdemo.module.usercenter.managecar.AuthenticationCarActivity">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:right_button_text="手动输入"
+        app:right_button_visible="true"
+        app:title_text="车辆认证"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF6E5"
+                android:drawableLeft="@drawable/ic_authentication_error"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="@dimen/spacing_medium"
+                android:text="认证失败: 上传信息不符，请重新上传 !"
+                android:textColor="@color/money_red"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <FrameLayout
+                android:id="@+id/fl_one"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                android:background="@drawable/shape_card_dashline_bg"
+                android:padding="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvError">
+
+                <com.nlinks.parkdemo.widget.AspectRatioImageView
+                    android:id="@+id/iv_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/driving_license1"
+                    app:aspectRatio="1.62"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_two"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                android:background="@drawable/shape_card_dashline_bg"
+                android:padding="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fl_one">
+
+                <com.nlinks.parkdemo.widget.AspectRatioImageView
+                    android:id="@+id/iv_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/driving_license2"
+                    app:aspectRatio="1.62"/>
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/btn_authentication"
+                style="@style/BigBtn"
+                android:layout_marginTop="20dp"
+                android:text="马上认证"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_two"/>
+
+            <TextView
+                android:id="@+id/tv_msg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="5dp"
+                android:padding="@dimen/spacing_medium"
+                android:textColor="@color/text_hint"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_authentication"/>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

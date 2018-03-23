@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/chooseCoupon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:background="@drawable/shape_rec_r999_d5ebfc_f9fdff"
+        android:drawableLeft="@drawable/coupon_view_ic"
+        android:drawablePadding="@dimen/spacing_small"
+        android:drawableRight="@drawable/ic_arrow_blue_right"
+        android:padding="@dimen/spacing_medium"
+        android:text="选择优惠券"
+        android:textColor="@color/colorPrimary"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/couponLayout"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/couponBg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/coupon_view_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/cancelCoupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_red_cancel"
+            app:layout_constraintBottom_toBottomOf="@+id/couponBg"
+            app:layout_constraintLeft_toRightOf="@+id/couponBg"
+            app:layout_constraintRight_toRightOf="@+id/couponBg"
+            app:layout_constraintTop_toTopOf="@+id/couponBg"/>
+
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:text="15.00"
+            android:gravity="top"
+            android:textSize="45sp"
+            android:textColor="@color/money_gold"
+            app:layout_constraintBottom_toBottomOf="@+id/couponBg"
+            app:layout_constraintLeft_toLeftOf="@+id/couponBg"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+        <TextView
+            android:id="@+id/tvCompany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:text="南威软件集团集团公司提供"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintRight_toRightOf="@id/couponBg"
+            app:layout_constraintBottom_toTopOf="@+id/jumpToCoupon"
+            app:layout_constraintLeft_toRightOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/jumpToCoupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_jump_coupon"
+            android:gravity="center"
+            android:text="去卡包 GO ▶"
+            android:textColor="#e6442f"
+            android:paddingLeft="@dimen/spacing_small"
+            android:paddingRight="@dimen/spacing_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/tvCompany"
+            app:layout_constraintRight_toRightOf="@id/tvCompany"
+            app:layout_constraintTop_toBottomOf="@+id/tvCompany"/>
+    </android.support.constraint.ConstraintLayout>
+</merge>

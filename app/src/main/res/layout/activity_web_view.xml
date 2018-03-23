@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.nlinks.parkdemo.widget.OnScrollCallbackWebView
+        android:id="@+id/wv_content"
+        android:layout_width="match_parent"
+        android:overScrollMode="never"
+        android:layout_height="match_parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dip"
+        android:progressDrawable="@drawable/web_pg"
+        android:visibility="gone"/>
+    <!--<com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        android:background="@color/transparent"
+        app:left_button_drawable="@mipmap/ic_cancel"
+        app:left_button_visible="true"/>-->
+    <RelativeLayout
+        android:id="@+id/wbTitleBar"
+        android:layout_width="match_parent"
+        android:paddingTop="24dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/progressBar"
+        android:layout_toEndOf="@+id/progressBar">
+
+        <com.nlinks.parkdemo.widget.IconFontTextView
+            android:id="@+id/action_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:paddingRight="10dp"
+            android:text="@string/if_back"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <com.nlinks.parkdemo.widget.IconFontTextView
+            android:id="@+id/action_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/action_back"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="@dimen/spacing_medium"
+            android:text="@string/if_cancel"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/tv_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxEms="8"
+            android:maxLines="1"
+            android:textColor="@color/global_title_text"
+            android:textSize="@dimen/title_text_size"/>
+    </RelativeLayout>
+</RelativeLayout>

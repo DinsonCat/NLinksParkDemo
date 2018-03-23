@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent">
+
+	<com.nlinks.parkdemo.widget.CommonTitleBar
+		style="@style/TitleBarStyle"
+		app:left_button_visible="true"
+		app:title_text="预约记录" />
+
+	<com.nlinks.parkdemo.widget.PagerTab
+		android:id="@+id/pt_tab"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/tab_height_normal"
+		android:background="@color/white" />
+
+	<android.support.v4.view.ViewPager
+		android:id="@+id/vp_container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" />
+</LinearLayout>

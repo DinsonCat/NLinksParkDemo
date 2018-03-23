@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_medium"
+    android:background="@drawable/shape_rec_r5_null_white">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_item_top_r5_fa"
+        android:padding="10dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descPlate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_white_divider_dash"
+        android:drawableLeft="@mipmap/cp"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:text="车牌号码"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tvPlate"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvPlate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_white_divider_dash"
+        android:gravity="end"
+        android:padding="10dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/descPlate"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/descStartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_white_divider_dash"
+        android:drawableLeft="@mipmap/sj"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:text="包月开始时间"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tvStartTime"
+        app:layout_constraintTop_toBottomOf="@id/descPlate" />
+
+    <TextView
+        android:id="@+id/tvStartTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_white_divider_dash"
+        android:gravity="end"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/descStartTime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descPlate" />
+
+    <TextView
+        android:id="@+id/descEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_white_divider_normal"
+        android:drawableLeft="@mipmap/sj"
+        android:drawablePadding="5dp"
+        android:padding="10dp"
+        android:text="包月结束时间"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tvEndTime"
+        app:layout_constraintTop_toBottomOf="@id/descStartTime" />
+
+    <TextView
+        android:id="@+id/tvEndTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_white_divider_normal"
+        android:gravity="end"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/descEndTime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descStartTime" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvOrderState"
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/right"
+        android:textColor="@color/text_primary"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        app:layout_constraintTop_toBottomOf="@id/descEndTime" />
+
+</android.support.constraint.ConstraintLayout>

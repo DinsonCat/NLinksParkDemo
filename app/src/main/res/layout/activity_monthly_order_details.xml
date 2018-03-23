@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nlinks.parkdemo.module.usercenter.monthly.MonthlyOrderDetailsActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.nlinks.parkdemo.widget.CommonTitleBar
+            android:id="@+id/titlebar"
+            style="@style/TitleBarStyle"
+            app:left_button_visible="true"
+            app:title_text="包月记录详情" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardPark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_medium"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvParkName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="南威停车场"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tvParkRule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="套餐"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v4.widget.Space
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/cardPark"
+                app:layout_constraintTop_toTopOf="@+id/cardPark" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@+id/guideline"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/descRule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/tcjl"
+                android:drawablePadding="8dp"
+                android:padding="@dimen/spacing_medium"
+                android:text="套餐详情"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/cardPark" />
+
+            <include
+                android:id="@+id/orderDetail"
+                layout="@layout/monthly_order_details_rule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_medium"
+                android:layout_marginRight="@dimen/spacing_medium"
+                app:layout_constraintTop_toBottomOf="@+id/descRule" />
+
+            <TextView
+                android:id="@+id/descOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/tcjl"
+                android:drawablePadding="8dp"
+                android:padding="@dimen/spacing_medium"
+                android:text="缴费详情"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/orderDetail" />
+
+            <include
+                layout="@layout/monthly_order_details_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_medium"
+                android:layout_marginRight="@dimen/spacing_medium"
+                app:layout_constraintTop_toBottomOf="@+id/descOrder" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

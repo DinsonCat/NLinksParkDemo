@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/title_temp"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="发布车位"/>
+
+    <TextView
+        android:id="@+id/tv_st"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_temp"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:text="开始时间 : "
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_st"
+        android:layout_alignTop="@id/tv_st"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_toRightOf="@id/tv_st"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:drawableRight="@mipmap/ic_time"
+        android:textSize="18sp"
+        android:paddingRight="10dp"/>
+
+
+    <TextView
+        android:id="@+id/tv_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_st"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:text="结束时间 : "
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_end_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_et"
+        android:layout_alignTop="@id/tv_et"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_toRightOf="@id/tv_et"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:textSize="18sp"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:drawableRight="@mipmap/ic_time"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_et"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:text="\u3000\u3000价格 : "
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_price_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_price"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/tv_price"
+        android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:text="元/小时"/>
+
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_price"
+        android:layout_alignTop="@id/tv_price"
+        android:gravity="center_vertical"
+        android:inputType="numberDecimal"
+        android:paddingLeft="10dp"
+        android:textSize="18sp"
+        android:maxLength="5"
+        android:textColor="@color/text_primary"
+        android:layout_toLeftOf="@id/tv_price_unit"
+        android:layout_toRightOf="@id/tv_price"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:paddingRight="10dp"/>
+
+    <Button
+        android:onClick="onReleasePark"
+        style="@style/BigBtn"
+        android:layout_below="@id/tv_price"
+        android:layout_marginTop="20dp"
+        android:text="确认发布"/>
+</RelativeLayout>

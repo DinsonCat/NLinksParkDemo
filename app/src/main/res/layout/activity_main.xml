@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_search_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_bar_user_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:onClick="doJumpUsercenter"
+            android:padding="@dimen/spacing_medium"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_home_user_center" />
+
+        <ImageView
+            android:id="@+id/ivRedPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shape_redpoint" />
+
+        <ImageView
+            android:id="@+id/iv_bar_message_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:onClick="doJumpMessageCenter"
+            android:padding="@dimen/spacing_medium"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_home_message_center" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_bar_message_center"
+            android:layout_toRightOf="@id/iv_bar_user_center"
+            android:background="@drawable/edittext_white_bg">
+
+            <ImageView
+                android:id="@+id/iv_bar_voice_input"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="6dp"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                android:onClick="onVoiceInput"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_home_voice_input" />
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/iv_bar_voice_input"
+                android:background="@color/transparent"
+                android:drawableLeft="@mipmap/icon_home_seach_left"
+                android:drawablePadding="10dp"
+                android:editable="false"
+                android:gravity="center_vertical"
+                android:onClick="doSearch"
+                android:paddingLeft="16dp"
+                android:textSize="13dp" />
+            <!--<View-->
+            <!--android:layout_width="1px"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_toRightOf="@id/et_bar_input"-->
+            <!--android:background="@color/divider"/>-->
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/mv_baidu_map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_search_title" />
+
+    <FrameLayout
+        android:id="@+id/fl_near_parking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_search_title"
+        android:background="@color/white"
+        android:onClick="onGetParkList"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_near_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:drawableLeft="@mipmap/icon_home_location_near"
+            android:drawablePadding="10dp"
+            android:drawableRight="@mipmap/right"
+            android:maxLines="1"
+            android:text="定位中……"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <include layout="@layout/activity_main_footer" />
+
+    <CheckBox
+        android:id="@+id/cb_map_road"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/fl_near_parking"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/selector_map_road"
+        android:button="@null"
+        android:scaleType="centerCrop" />
+
+
+    <CheckBox
+        android:id="@+id/cb_map_appointment"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@id/cb_map_road"
+        android:layout_below="@id/cb_map_road"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/selector_map_appoint"
+        android:button="@null"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@id/cb_map_road"
+        android:layout_below="@id/cb_map_appointment"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:onClick="dojumpMyAppoint"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/map_my_appointment" />
+</RelativeLayout>

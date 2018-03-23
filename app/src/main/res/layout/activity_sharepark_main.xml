@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        android:id="@+id/titlebar"
+        app:left_button_visible="true"
+        app:right_button_text="云锁"
+        app:right_button_visible="false"
+        app:title_text="车位共享"/>
+
+    <TextView
+        android:id="@+id/tv_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titlebar"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@mipmap/ic_warn"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="自用时段请勿分享，避免冲突影响利益"
+        android:textColor="@color/text_hint"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        style="@style/BigBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:onClick="doAddParking"
+        android:text="添加车位"/>
+
+    <FrameLayout
+        android:id="@+id/fl_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_add"
+        android:layout_below="@id/tv_warn">
+
+        <include layout="@layout/empty_share_parking"/>
+    </FrameLayout>
+
+    <com.nlinks.parkdemo.widget.recycleview.EmptyRecyclerView
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_add"
+        android:layout_below="@id/tv_warn"/>
+
+
+</RelativeLayout>

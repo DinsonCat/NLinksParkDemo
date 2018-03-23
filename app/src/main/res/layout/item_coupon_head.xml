@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_exchange"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginLeft="@dimen/spacing_medium"
+    android:layout_marginRight="@dimen/spacing_medium"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/et_code"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="3dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:hint="请输入兑换码"
+        android:imeOptions="actionDone"
+        android:paddingLeft="10dp"
+        android:textColor="@color/text_secondary"
+        android:textColorHint="@color/text_hint"/>
+
+    <Button
+        android:id="@+id/btn_exchange"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:background="@drawable/selector_r2_bigbtn_style"
+        android:text="兑换"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+</LinearLayout>

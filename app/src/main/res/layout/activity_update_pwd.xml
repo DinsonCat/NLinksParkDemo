@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="修改密码"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:minWidth="90dp"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:text="原密码"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"/>
+
+        <com.nlinks.parkdemo.widget.EditTextClear
+            android:id="@+id/et_old_pwd"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入原密码"
+            android:inputType="textPassword"
+            android:maxLength="18"
+            android:paddingRight="@dimen/spacing_medium"
+            android:paddingTop="0dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:minWidth="90dp"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:text="新密码"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"/>
+
+        <com.nlinks.parkdemo.widget.EditTextClear
+            android:id="@+id/et_new_pwd"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:hint="请输入6-18位密码"
+            android:inputType="textPassword"
+            android:maxLength="18"
+            android:paddingRight="@dimen/spacing_medium"
+            android:paddingTop="0dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:minWidth="90dp"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:text="确认密码"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"/>
+
+        <com.nlinks.parkdemo.widget.EditTextClear
+            android:id="@+id/et_new_pwd_confirm"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:background="@null"
+            android:hint="请再次确认密码"
+            android:inputType="textPassword"
+            android:maxLength="18"
+            android:paddingRight="@dimen/spacing_medium"
+            android:paddingTop="0dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_medium"
+        android:text="• 为了您的账号安全，建议设置6-18位数字或者字母"
+        android:textColor="@color/text_hint"/>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        style="@style/BigBtn"
+        android:onClick="onClickconfirm"
+        android:text="确定"/>
+</LinearLayout>

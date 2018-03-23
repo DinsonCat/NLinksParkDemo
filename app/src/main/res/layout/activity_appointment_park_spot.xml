@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/ll_container"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:baselineAligned="false"
+              android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="预定车位"/>
+
+
+    <include layout="@layout/park_head_layout"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_out_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CenterItemTv.left"
+            android:drawableLeft="@mipmap/appointment_spot_out_time"
+            android:text="离场时间"/>
+
+        <TextView
+            android:id="@+id/tv_out_time"
+            style="@style/CenterItemTv.right"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/appointment_deadline_warning"
+        android:drawablePadding="@dimen/text_drawable_padding"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="@dimen/spacing_medium"
+        android:paddingTop="8dp"
+        android:text="超时停车将额外收取3倍停车费"
+        android:textColor="@color/share_red"/>
+
+    <LinearLayout
+        android:id="@+id/ll_car_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CenterItemTv.left"
+            android:drawableLeft="@mipmap/appointment_spot_car_code"
+            android:text="车牌号"/>
+
+        <TextView
+            android:id="@+id/tv_car_code"
+            style="@style/CenterItemTv.right"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CenterItemTv.left"
+            android:drawableLeft="@mipmap/money1"
+            android:drawablePadding="14dp"
+            android:text="优惠金额"/>
+
+        <TextView
+            android:id="@+id/tv_money_yugu"
+            style="@style/CenterItemTv.right"
+            android:maxLines="1"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_appointment_submit"
+        style="@style/BigBtn"
+        android:layout_marginTop="150dp"
+        android:text="立即预定"/>
+
+</LinearLayout>

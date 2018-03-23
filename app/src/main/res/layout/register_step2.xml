@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutStep2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="invisible"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_login_card_bg"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/register_step2"/>
+
+    <com.nlinks.parkdemo.widget.EditTextPwd
+        android:id="@+id/et_password"
+        style="@style/Login.Password"
+        android:layout_width="match_parent"
+        android:hint="请输入6-18位密码"/>
+
+    <com.nlinks.parkdemo.widget.EditTextPwd
+        android:id="@id/et_password_confirm"
+        style="@style/Login.Password"
+        android:layout_width="match_parent"
+        android:hint="请确认密码"/>
+</LinearLayout>

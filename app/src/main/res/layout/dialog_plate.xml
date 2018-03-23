@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogRoot"
+    android:clipChildren="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_rec_r10_null_white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="10dp"
+        android:padding="@dimen/spacing_medium"
+        android:text="请选择车牌"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpContainer"
+        android:clipChildren="false"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+    <View style="@style/HorizontalLine" />
+
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dialogLeftBtn"
+            android:layout_width="0dp"
+            android:layout_height="46.0dip"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="取消"
+            android:textColor="#fc6d81"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/left_right_divider"
+            style="@style/VerticalLine" />
+
+        <TextView
+            android:id="@+id/dialogRightBtn"
+            android:layout_width="0dp"
+            android:layout_height="46.0dip"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="确定"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/singleBtnLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/singBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="46.0dip"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

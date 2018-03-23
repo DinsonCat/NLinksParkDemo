@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nlinks.parkdemo.module.usercenter.monthly.MonthlyPaymentActivity">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        app:left_button_visible="true"
+        app:title_text="订单详情" />
+
+    <TextView
+        android:id="@+id/tvParkName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/appointment_header_park_name"
+        android:drawablePadding="8dp"
+        android:padding="@dimen/spacing_medium"
+        android:text="南威"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/titlebar" />
+
+
+    <include
+        android:id="@+id/orderLayout"
+        layout="@layout/monthly_payment_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvParkName" />
+
+
+    <LinearLayout
+        android:id="@+id/llPlatformActivity"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/orderLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/descPayChannel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/appointment_pay_way"
+        android:drawablePadding="8dp"
+        android:padding="@dimen/spacing_medium"
+        android:text="支付方式"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/llPlatformActivity" />
+
+    <RadioGroup
+        android:id="@+id/rgPayway"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/descPayChannel">
+
+        <RadioButton
+            android:id="@+id/rb_wallet_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/payment_wallet"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/selector_cb_pay"
+            android:paddingBottom="12dp"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:paddingRight="@dimen/spacing_medium"
+            android:paddingTop="12dp"
+            android:text="钱包支付"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rb_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:button="@null"
+            android:drawableLeft="@drawable/payment_wetchat"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/selector_cb_pay"
+            android:paddingBottom="12dp"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:paddingRight="@dimen/spacing_medium"
+            android:paddingTop="12dp"
+            android:text="微信支付"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rb_ali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:button="@null"
+            android:drawableLeft="@drawable/payment_alipay"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/selector_cb_pay"
+            android:paddingBottom="12dp"
+            android:paddingLeft="@dimen/spacing_medium"
+            android:paddingRight="@dimen/spacing_medium"
+            android:paddingTop="12dp"
+            android:text="支付宝支付"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAction"
+        style="@style/BigBtn"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:text="立即支付"
+        app:layout_constraintTop_toBottomOf="@+id/rgPayway" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context="com.nlinks.parkdemo.module.usercenter.managecar.AuthenticationByHandActivity">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/title_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:left_button_visible="true"
+        app:title_text="车辆认证"/>
+
+
+    <TextView
+        android:id="@+id/tv_plate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="@dimen/spacing_medium"
+        android:text="@string/plateNum"
+        android:textColor="@color/text_primary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titlebar"/>
+
+    <EditText
+        android:id="@+id/et_plate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:padding="10dp"
+        android:enabled="false"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_plate"
+        app:layout_constraintLeft_toRightOf="@+id/tv_plate"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_medium"
+        android:text="车主姓名 :"
+        android:textColor="@color/text_primary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_plate"/>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:padding="10dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:maxLength="10"
+        android:hint="请输入车主姓名"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_name"
+        app:layout_constraintLeft_toRightOf="@+id/tv_name"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_medium"
+        android:text="车架号码 :"
+        android:textColor="@color/text_primary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <EditText
+        android:id="@+id/et_frame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:padding="10dp"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:hint="请输入车架号码"
+        android:maxLength="17"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_frame"
+        app:layout_constraintLeft_toRightOf="@+id/tv_frame"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_engine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_medium"
+        android:text="发动机号 :"
+        android:textColor="@color/text_primary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_frame"/>
+
+    <EditText
+        android:id="@+id/et_engine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:background="@drawable/shape_rec_r2_d0d0d0_white"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:hint="请输入发动机号码"
+        android:maxLength="20"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_engine"
+        app:layout_constraintLeft_toRightOf="@+id/tv_engine"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <Button
+        android:id="@+id/btn_authentic_now"
+        style="@style/BigBtn"
+        android:layout_marginTop="40dp"
+        android:text="马上认证"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_engine"
+        app:layout_constraintVertical_bias="0.278"/>
+
+    <Button
+        style="@style/BigBtn"
+        android:layout_marginTop="8dp"
+        android:id="@+id/btn_back"
+        android:background="@drawable/shape_rec_r2_blue_white"
+        android:text="上传自动识别"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_authentic_now"/>
+
+</android.support.constraint.ConstraintLayout>

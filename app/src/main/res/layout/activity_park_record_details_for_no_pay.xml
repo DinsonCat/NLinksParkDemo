@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nlinks.parkdemo.widget.CommonTitleBar
+        android:id="@+id/titlebar"
+        style="@style/TitleBarStyle"
+        android:fitsSystemWindows="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:left_button_visible="true"
+        app:title_text="记录详情"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/BaiduMapView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="2.5:1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <com.nlinks.parkdemo.widget.ParkRecordHeadMsg
+                android:id="@+id/mParkRecordHeadMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/chargeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/pay_details_ic"
+                    android:drawablePadding="5dp"
+                    android:padding="@dimen/spacing_medium"
+                    android:text="费用详情"
+                    android:textColor="@color/money_orange"
+                    android:textSize="12sp"
+                    app:layout_constraintRight_toRightOf="parent"/>
+            </com.nlinks.parkdemo.widget.ParkRecordHeadMsg>
+
+            <com.nlinks.parkdemo.widget.CouponView
+                android:id="@+id/couponView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <!-- <RadioGroup
+                 android:id="@+id/rgPayway"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@color/white"
+                 android:orientation="vertical" >
+
+                 <RadioButton
+                     android:id="@+id/rb_wallet_pay"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="?selectableItemBackground"
+                     android:button="@null"
+                     android:checked="true"
+                     android:drawableLeft="@drawable/payment_wallet"
+                     android:drawablePadding="10dp"
+                     android:drawableRight="@drawable/selector_cb_pay"
+                     android:paddingBottom="12dp"
+                     android:paddingLeft="@dimen/spacing_medium"
+                     android:paddingRight="@dimen/spacing_medium"
+                     android:paddingTop="12dp"
+                     android:text="钱包支付"
+                     android:textColor="@color/text_primary"
+                     android:textSize="16sp" />
+
+                 <RadioButton
+                     android:id="@+id/rb_wechat"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="@null"
+                     android:button="@null"
+                     android:drawableLeft="@drawable/payment_wetchat"
+                     android:drawablePadding="10dp"
+                     android:drawableRight="@drawable/selector_cb_pay"
+                     android:paddingBottom="12dp"
+                     android:paddingLeft="@dimen/spacing_medium"
+                     android:paddingRight="@dimen/spacing_medium"
+                     android:paddingTop="12dp"
+                     android:text="微信支付"
+                     android:textColor="@color/text_primary"
+                     android:textSize="16sp" />
+
+                 <RadioButton
+                     android:id="@+id/rb_ali"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="@null"
+                     android:button="@null"
+                     android:drawableLeft="@drawable/payment_alipay"
+                     android:drawablePadding="10dp"
+                     android:drawableRight="@drawable/selector_cb_pay"
+                     android:paddingBottom="12dp"
+                     android:paddingLeft="@dimen/spacing_medium"
+                     android:paddingRight="@dimen/spacing_medium"
+                     android:paddingTop="12dp"
+                     android:text="支付宝支付"
+                     android:textColor="@color/text_primary"
+                     android:textSize="16sp" />-->
+            <!--</RadioGroup>-->
+            <com.nlinks.parkdemo.widget.PayView
+                android:id="@+id/payView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <View style="@style/HorizontalLine"/>
+
+    <LinearLayout
+        android:id="@+id/ll_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:paddingRight="@dimen/spacing_medium"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/tvPayMoney"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="还需支付"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnPayNow"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/selector_paynow_blue"
+            android:onClick="doPayFor"
+            android:text="立即缴费"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="@dimen/spacing_medium"
+    android:layout_marginRight="@dimen/spacing_medium"
+    android:background="@drawable/shape_rec_r2_d0d0d0_white">
+
+    <TextView
+        android:id="@+id/itemFront"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:background="@drawable/selector_monthly_item_front"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvChareFee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/monthly_item_ic"
+        android:gravity="center"
+        android:text="未开通"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/itemFront"
+        app:layout_constraintLeft_toLeftOf="@+id/itemFront"
+        app:layout_constraintRight_toRightOf="@+id/itemFront"
+        app:layout_constraintTop_toTopOf="@+id/itemFront" />
+
+    <TextView
+        android:id="@+id/tvSetMealsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:text="包月套餐"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@+id/itemFront"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descSetMealsTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawablePadding="5dp"
+        android:text="服务时间: "
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintLeft_toLeftOf="@+id/tvSetMealsName"
+        app:layout_constraintTop_toBottomOf="@+id/tvSetMealsName" />
+
+    <TextView
+        android:id="@+id/tvSetMealsTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:minHeight="35dp"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/descSetMealsTime"
+        app:layout_constraintRight_toLeftOf="@+id/ivAction"
+        app:layout_constraintTop_toTopOf="@+id/descSetMealsTime" />
+
+    <ImageView
+        android:id="@+id/ivAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:src="@drawable/monthly_q_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

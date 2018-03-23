@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/park_head_layout"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:drawableLeft="@mipmap/appointment_park_choice"
+        android:drawablePadding="@dimen/text_drawable_padding"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/spacing_medium"
+        android:text="选择合适的停车位"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv_item_empty_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="当前无可预约车位"
+        android:textColor="@color/text_hint"
+        android:textSize="15sp"/>
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:padding="@dimen/spacing_medium">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_park"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/bg_default_park"/>
+
+            <TextView
+                android:id="@+id/tv_park_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_park"
+                android:padding="@dimen/spacing_medium"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@id/tv_park_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_park_name"
+                android:drawableLeft="@mipmap/icon_location"
+                android:drawablePadding="5dp"
+                android:paddingLeft="@dimen/spacing_medium"
+                android:paddingRight="@dimen/spacing_medium"/>
+
+
+            <LinearLayout
+                android:id="@+id/ll_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:id="@+id/tv_park_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/cp"
+                    android:drawablePadding="5dp"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/tv_park_distance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/ic_location2"
+                    android:drawablePadding="5dp"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_navi"
+                style="@style/BigBtn"
+                android:layout_margin="20dp"
+                android:text="立即导航"/>
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+</FrameLayout>
