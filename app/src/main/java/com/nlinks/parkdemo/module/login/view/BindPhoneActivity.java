@@ -16,6 +16,7 @@ import com.nlinks.parkdemo.entity._req.ThirdAuthLogin;
 import com.nlinks.parkdemo.entity._req.ThirdAuthLoginByQQ;
 import com.nlinks.parkdemo.entity.thirdlogin.LoginBundle;
 import com.nlinks.parkdemo.entity.thirdlogin.LoginResult;
+import com.nlinks.parkdemo.entity.user.SmsCode;
 import com.nlinks.parkdemo.global.AppConst;
 import com.nlinks.parkdemo.global.GlobalApplication;
 import com.nlinks.parkdemo.http.BaseObserver;
@@ -121,7 +122,7 @@ public class BindPhoneActivity extends BaseActivity implements View.OnClickListe
      */
     private void getCode(String phoneStr) {
         mTvGetCode.setEnabled(false);
-        mUserApi.getCode(phoneStr, AppConst.ACCESSKEY)
+        mUserApi.getCode(new SmsCode(phoneStr) )
             .compose(RxSchedulers.io_main()).subscribe(new BaseObserver<Void>(this) {
             @NonNull
             @Override

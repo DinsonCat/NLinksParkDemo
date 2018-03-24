@@ -26,4 +26,22 @@ public class MD5 {
 		}
 		return hex.toString().toUpperCase();
 	}
+
+	public static String getSmsToken(String phoneNo, String accessKey) {
+		char sa = accessKey.charAt(0);
+		char ea = accessKey.charAt(accessKey.length()-1);
+		String suba = accessKey.substring(1, accessKey.length() - 1);
+		char sp = phoneNo.charAt(0);
+		char ep = phoneNo.charAt(phoneNo.length()-1);
+		String subp = phoneNo.substring(1, phoneNo.length() - 1);
+		StringBuffer sb = new StringBuffer();
+		sb.append(ep);
+		sb.append(suba);
+		sb.append(sp);
+		sb.append("-");
+		sb.append(ea);
+		sb.append(subp);
+		sb.append(sa);
+		return encode(sb.toString());
+	}
 }

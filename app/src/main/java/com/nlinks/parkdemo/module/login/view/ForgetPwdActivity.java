@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.nlinks.parkdemo.R;
 import com.nlinks.parkdemo.api.UserApi;
 import com.nlinks.parkdemo.entity._req.RegisterAndForgetPwd;
+import com.nlinks.parkdemo.entity.user.SmsCode;
 import com.nlinks.parkdemo.global.AppConst;
 import com.nlinks.parkdemo.http.BaseObserver;
 import com.nlinks.parkdemo.http.HttpHelper;
@@ -150,7 +151,7 @@ public class ForgetPwdActivity extends BaseActivity implements View.OnClickListe
     }
 
     private void getCode(String number) {
-        mUserApi.getCode(number, AppConst.ACCESSKEY).compose(RxSchedulers.io_main())
+        mUserApi.getCode(new SmsCode(number) ).compose(RxSchedulers.io_main())
             .subscribe(new BaseObserver<Void>() {
                 @NonNull
                 @Override

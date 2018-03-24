@@ -7,6 +7,9 @@ import android.content.pm.PackageManager;
 import android.os.Handler;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.igexin.sdk.PushManager;
+import com.igexin.sdk.PushService;
+import com.nlinks.parkdemo.service.PushIntentService;
 import com.nlinks.parkdemo.utils.LogUtils;
 import com.nlinks.parkdemo.utils.SPUtils;
 
@@ -40,7 +43,11 @@ public class GlobalApplication extends Application {
         if (!AppConst.isDebug) {
             CrashHandler.getInstance().init(context, context.getCacheDir() + "/CrashTxt/");
         }
-
+        // 初始化个推服务
+        PushManager.getInstance().initialize(this, PushService.class);
+        // 为第三⽅方⾃自定义的推送服务事件接收类
+        PushManager.getInstance().registerPushIntentService(this, PushIntentService.class);
+        //do a lot of things than
 
         try {
             ApplicationInfo info = getPackageManager().getApplicationInfo(getPackageName(),

@@ -21,12 +21,10 @@ import com.nlinks.parkdemo.api.PlateNumAPI;
 import com.nlinks.parkdemo.entity._req.AutoPay;
 import com.nlinks.parkdemo.entity._req.ChangeBrands;
 import com.nlinks.parkdemo.entity.plate.PlateInfo;
-import com.nlinks.parkdemo.global.AppConst;
 import com.nlinks.parkdemo.http.BaseObserver;
 import com.nlinks.parkdemo.http.HttpHelper;
 import com.nlinks.parkdemo.http.RxSchedulers;
 import com.nlinks.parkdemo.module.base.BaseActivity;
-import com.nlinks.parkdemo.module.base.WebViewPromotionActivity;
 import com.nlinks.parkdemo.utils.LogUtils;
 import com.nlinks.parkdemo.utils.NlinksParkUtils;
 import com.nlinks.parkdemo.utils.SPUtils;
@@ -88,10 +86,10 @@ public class ManageCarActivity extends BaseActivity implements View.OnClickListe
 
     private void initUI() {
         ll_content = findViewById(R.id.ll_content);
-        btn_add_car =   findViewById(R.id.btn_add_car);
-        tv_title_right =  findViewById(R.id.tv_title_right);
-        tv_msg =  findViewById(R.id.tv_msg);
-        iv_bg =   findViewById(R.id.iv_bg);
+        btn_add_car = findViewById(R.id.btn_add_car);
+        tv_title_right = findViewById(R.id.tv_title_right);
+        tv_msg = findViewById(R.id.tv_msg);
+        iv_bg = findViewById(R.id.iv_bg);
         tv_title_right.setOnClickListener(this);
 
         mPlateNumAPI = HttpHelper.getRetrofit().create(PlateNumAPI.class);
@@ -144,13 +142,13 @@ public class ManageCarActivity extends BaseActivity implements View.OnClickListe
      */
     private void createItem(final PlateInfo plateInfo, int i) {
         FrameLayout view = (FrameLayout) getLayoutInflater().inflate(R.layout.item_plate_num_delete, ll_content, false);
-        TextView tv_plate =  view.findViewById(R.id.tv_plate);
-        ImageView iv_delete =  view.findViewById(R.id.iv_delete);
-        TextView tv_brand =  view.findViewById(R.id.tv_brand);
-        TextView tv_state =  view.findViewById(R.id.tv_state);
+        TextView tv_plate = view.findViewById(R.id.tv_plate);
+        ImageView iv_delete = view.findViewById(R.id.iv_delete);
+        TextView tv_brand = view.findViewById(R.id.tv_brand);
+        TextView tv_state = view.findViewById(R.id.tv_state);
         view.findViewById(R.id.icAuthentication).setVisibility(plateInfo.getStatus() == 1 ? View.VISIBLE : View.INVISIBLE);
 
-        final SwitchButton sb_ios =   view.findViewById(R.id.sb_ios);
+        final SwitchButton sb_ios = view.findViewById(R.id.sb_ios);
 
         sb_ios.setCheckedImmediately(plateInfo.getIsAutoPay() != 0);
         sb_ios.setOnTouchListener(new View.OnTouchListener() {
@@ -171,25 +169,25 @@ public class ManageCarActivity extends BaseActivity implements View.OnClickListe
                 final boolean checked = sb_ios.isChecked();
                 sb_ios.setCheckedImmediately(!checked);
 
-                if (SPUtils.isMember(ManageCarActivity.this)) {
-                    //蜻蜓会员，弹出是否同意自动支付功能对话框
-                    mCustomDialog.setButtonsText("取消", "确定");
-                    mCustomDialog.setMessage(checked ? "您确定要开通自动支付吗？" : "关闭自动支付\n车牌离场将不能使用钱包自动支付");
-                    mCustomDialog.setOperationListener(new DialogCancelConfirm.OnOperationListener() {
-                        @Override
-                        public void onLeftClick() {
-                            mCustomDialog.dismiss();
-                        }
+//                if (SPUtils.isMember(ManageCarActivity.this)) {
+                //蜻蜓会员，弹出是否同意自动支付功能对话框
+                mCustomDialog.setButtonsText("取消", "确定");
+                mCustomDialog.setMessage(checked ? "您确定要开通自动支付吗？\nps:请确保钱包余额充足!" : "关闭自动支付\n车牌离场将不能使用钱包自动支付");
+                mCustomDialog.setOperationListener(new DialogCancelConfirm.OnOperationListener() {
+                    @Override
+                    public void onLeftClick() {
+                        mCustomDialog.dismiss();
+                    }
 
-                        @Override
-                        public void onRightClick() {
-                            mCustomDialog.dismiss();
-                            AutoPay autoPay = new AutoPay(plateInfo.getId(), checked ? 1 : 0);
-                            LogUtils.i(autoPay.toString());
-                            postAutoPay2Server(autoPay, sb_ios, checked);
-                        }
-                    });
-                } else {
+                    @Override
+                    public void onRightClick() {
+                        mCustomDialog.dismiss();
+                        AutoPay autoPay = new AutoPay(plateInfo.getId(), checked ? 1 : 0);
+                        LogUtils.i(autoPay.toString());
+                        postAutoPay2Server(autoPay, sb_ios, checked);
+                    }
+                });
+               /* } else {
                     //普通会员，弹出升级成会员的对话框
                     mCustomDialog.setButtonsText("取消", "成为金卡会员");
                     mCustomDialog.setMessage("您还不是金卡会员\n无法开启自动支付哦");
@@ -205,7 +203,7 @@ public class ManageCarActivity extends BaseActivity implements View.OnClickListe
                             mCustomDialog.dismiss();
                         }
                     });
-                }
+                }*/
                 mCustomDialog.show();
             }
 

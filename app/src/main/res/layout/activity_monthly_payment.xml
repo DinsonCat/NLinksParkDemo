@@ -93,6 +93,7 @@
             android:paddingRight="@dimen/spacing_medium"
             android:paddingTop="12dp"
             android:text="微信支付"
+            android:visibility="gone"
             android:textColor="@color/text_primary"
             android:textSize="16sp" />
 

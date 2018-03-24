@@ -33,7 +33,6 @@ import com.nlinks.parkdemo.module.park.ParkDetailActivity
 import com.nlinks.parkdemo.utils.*
 import com.nlinks.parkdemo.widget.CouponView
 import kotlinx.android.synthetic.main.activity_park_record_details_for_no_pay.*
-import org.jetbrains.anko.toast
 
 class ParkRecordDetailsForNoPayAty : BaseActivity() {
 
@@ -208,7 +207,9 @@ class ParkRecordDetailsForNoPayAty : BaseActivity() {
                         "优惠券", "平台活动"))
                 }
                 PaymentSuccessActivity.start(this, extra)
-            } else toast(it.message)
+            } else {
+                UIUtils.showToast(it.message)
+            }
         })
     }
 }

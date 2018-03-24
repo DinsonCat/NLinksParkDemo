@@ -22,10 +22,10 @@ import com.nlinks.parkdemo.R;
 import com.nlinks.parkdemo.api.UserApi;
 import com.nlinks.parkdemo.entity._req.RegisterAndForgetPwd;
 import com.nlinks.parkdemo.entity.user.RegisterResult;
+import com.nlinks.parkdemo.entity.user.SmsCode;
 import com.nlinks.parkdemo.global.AppConst;
 import com.nlinks.parkdemo.http.BaseObserver;
 import com.nlinks.parkdemo.http.HttpHelper;
-import com.nlinks.parkdemo.http.HttpResult;
 import com.nlinks.parkdemo.http.RxSchedulers;
 import com.nlinks.parkdemo.module.base.BaseActivity;
 import com.nlinks.parkdemo.module.base.WebViewNormalActivity;
@@ -40,13 +40,6 @@ import com.nlinks.parkdemo.utils.avalidations.utils.UserPhoneValidation;
 import com.nlinks.parkdemo.utils.avalidations.utils.UserPwdValidation;
 
 import java.util.Locale;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
-import io.reactivex.schedulers.Schedulers;
 
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
@@ -284,7 +277,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     }
 
     private void getCode(String number) {
-        mUserApi.getCode(number, AppConst.ACCESSKEY).compose(RxSchedulers.io_main())
+        mUserApi.getCode(new SmsCode(number)).compose(RxSchedulers.io_main())
             .subscribe(new BaseObserver<Void>() {
                 @NonNull
                 @Override

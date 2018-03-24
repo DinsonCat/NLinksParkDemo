@@ -168,6 +168,7 @@
             <TextView
                 android:id="@+id/tv_monthly_payment"
                 style="@style/CenterItemTv"
+                android:visibility="gone"
                 android:drawableLeft="@mipmap/wd_cfby"
                 android:text="出行停车月卡"/>
 
@@ -180,6 +181,7 @@
             <TextView
                 android:id="@+id/tv_suggestion"
                 style="@style/CenterItemTv"
+                android:visibility="gone"
                 android:drawableLeft="@mipmap/wd_yjfk"
                 android:text="意见反馈"/>
         </LinearLayout>

@@ -24,11 +24,11 @@ import com.nlinks.parkdemo.modle.PayResultBean
 import com.nlinks.parkdemo.utils.LogUtils
 import com.nlinks.parkdemo.utils.SPUtils
 import com.nlinks.parkdemo.utils.StringUtils
+import com.nlinks.parkdemo.utils.UIUtils
 import com.nlinks.parkdemo.wxapi.WXPayUtil
 import com.tencent.mm.opensdk.modelpay.PayReq
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
 import io.reactivex.Observable
-import org.jetbrains.anko.dip
 
 /**
  *优惠券的选择（包含了请求优惠券，自动匹配优惠券）
@@ -49,7 +49,7 @@ class PayView @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
         mAliPay = createRadioBtn(R.drawable.payment_alipay, "支付宝支付")
 
         addView(mWalletPay)
-        addView(mWechatPay)
+        //addView(mWechatPay)
         addView(mAliPay)
 
         check(mWalletPay.id)
@@ -81,10 +81,10 @@ class PayView @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
             val right = ContextCompat.getDrawable(context, R.drawable.selector_cb_blue)
             right.setBounds(0, 0, right.minimumWidth, right.minimumHeight)
             setCompoundDrawables(left, null, right, null)
-            compoundDrawablePadding = dip(10)
+            compoundDrawablePadding = UIUtils.dip2px(10f)
 
             val leftAndRight = context.resources.getDimensionPixelSize(R.dimen.spacing_medium)
-            val topAndBottom = dip(12)
+            val topAndBottom = UIUtils.dip2px(12f)
             setPadding(leftAndRight, topAndBottom, leftAndRight, topAndBottom)
             setText(text)
             setTextColor(ContextCompat.getColor(context, R.color.text_primary))

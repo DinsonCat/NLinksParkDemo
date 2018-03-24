@@ -59,6 +59,21 @@ public class ParkRecord implements Parcelable {
     private String plateNum="";
     private String waitOutTime="";
     private String parkCode="";
+    /**
+     * latitude : 24.878191
+     * consume : 2.0
+     * hasPay : 2.0
+     * parkSeconds : 57120
+     * waitLeaveMin : 15
+     * couponMoney : 0.99
+     * isShare : 0
+     * waitPay : 0.0
+     * waitOutTime : null
+     * outTime : null
+     * longitude : 118.643088
+     */
+
+    private int waitLeaveMin;
 
 
     protected ParkRecord(Parcel in) {
@@ -86,6 +101,7 @@ public class ParkRecord implements Parcelable {
         plateNum = in.readString();
         waitOutTime = in.readString();
         parkCode = in.readString();
+        waitLeaveMin = in.readInt();
     }
 
     @Override
@@ -114,6 +130,7 @@ public class ParkRecord implements Parcelable {
         dest.writeString(plateNum);
         dest.writeString(waitOutTime);
         dest.writeString(parkCode);
+        dest.writeInt(waitLeaveMin);
     }
 
     @Override
@@ -327,4 +344,14 @@ public class ParkRecord implements Parcelable {
     public void setPlateNum(String plateNum) {
         this.plateNum = plateNum;
     }
+
+
+    public int getWaitLeaveMin() {
+        return waitLeaveMin;
+    }
+
+    public void setWaitLeaveMin(int waitLeaveMin) {
+        this.waitLeaveMin = waitLeaveMin;
+    }
+
 }

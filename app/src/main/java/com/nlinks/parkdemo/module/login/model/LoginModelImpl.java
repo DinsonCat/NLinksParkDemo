@@ -7,7 +7,7 @@ import com.nlinks.parkdemo.api.UserApi;
 import com.nlinks.parkdemo.entity._req.Login;
 import com.nlinks.parkdemo.entity.plate.PlateInfo;
 import com.nlinks.parkdemo.entity.user.LoginResultData;
-import com.nlinks.parkdemo.global.AppConst;
+import com.nlinks.parkdemo.entity.user.SmsCode;
 import com.nlinks.parkdemo.global.GlobalApplication;
 import com.nlinks.parkdemo.http.BaseObserver;
 import com.nlinks.parkdemo.http.HttpHelper;
@@ -17,6 +17,8 @@ import com.nlinks.parkdemo.utils.MD5;
 import com.nlinks.parkdemo.utils.SPUtils;
 import com.nlinks.parkdemo.utils.StringUtils;
 import com.nlinks.parkdemo.utils.UIUtils;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -63,19 +65,28 @@ public class LoginModelImpl implements ILoginModel {
 
     @Override
     public void getSmsCode(final String phone) {
-        mUserApi.getCode(phone, AppConst.ACCESSKEY)
+
+        mUserApi.getCode(new SmsCode(phone))
             .compose(RxSchedulers.io_main()).subscribe(new LoginObserver<Void>() {
             @Override
             public void onHandleSuccess(Void aVoid) {
                 mListener.loginSuccess(null, phone);
             }
         });
+
+        /*mUserApi.getCode(new SmsCode(phone))
+            .compose(RxSchedulers.io_main()).subscribe(new LoginObserver<Void>() {
+            @Override
+            public void onHandleSuccess(Void aVoid) {
+                mListener.loginSuccess(null, phone);
+            }
+        });*/
     }
 
     @Override
     public void getPlate(String userId, final OnPlateNullListener listener) {
-         HttpHelper.getRetrofit().create(PlateNumAPI.class).getPlateList(userId)
-         .compose(RxSchedulers.io_main()).subscribe(new BaseObserver<ArrayList<PlateInfo>>() {
+        HttpHelper.getRetrofit().create(PlateNumAPI.class).getPlateList(userId)
+            .compose(RxSchedulers.io_main()).subscribe(new BaseObserver<ArrayList<PlateInfo>>() {
             @NonNull
             @Override
             public void onHandleSuccess(ArrayList<PlateInfo> plateInfos) {

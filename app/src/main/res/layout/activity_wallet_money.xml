@@ -89,13 +89,15 @@
             style="@style/CenterItemTv"
             android:layout_marginTop="10dp"
             android:drawableLeft="@mipmap/monthly_ic"
-            android:text="月卡" />
+            android:text="月卡"
+            android:visibility="gone"/>
 
         <LinearLayout
             android:id="@+id/ll_coupon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 style="@style/CenterItemTv.left"
@@ -112,9 +114,9 @@
         <TextView
             android:id="@+id/tv_member"
             style="@style/CenterItemTv"
-            android:visibility="gone"
             android:drawableLeft="@mipmap/vip_ic"
-            android:text="出行停车金卡"/>
+            android:text="出行停车金卡"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/tv_turn_recharge"

@@ -127,6 +127,20 @@ public class DateUtils {
     public static String getYear() {
         return getYear(0);
     }
+    /**
+     * 得到日期
+     *
+     * @param offset 偏移天数，0表示今天，-1表示昨天，1表示明天
+     * @return yyyy-MM-dd
+     */
+    public static String getFuture(String inTime, int offset, String format) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date(str2long(inTime, "yyyy-MM-dd HH:mm:ss")));
+        calendar.add(Calendar.MINUTE, offset);
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        String yestoday = sdf.format(calendar.getTime());
+        return yestoday;
+    }
 
     /**
      * 得到日期

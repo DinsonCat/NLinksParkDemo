@@ -275,6 +275,7 @@
                     android:drawableRight="@drawable/selector_cb_pay"
                     android:padding="@dimen/spacing_medium"
                     android:text="微信支付"
+                    android:visibility="gone"
                     android:textColor="@color/text_primary"/>
 
                 <RadioButton

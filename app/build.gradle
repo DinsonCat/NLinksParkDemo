@@ -47,6 +47,11 @@ android {
         testOptions {
             unitTests.returnDefaultValues = true
         }
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "E7SElRsEBU8lTz25YzsWZ9",
+                GETUI_APP_KEY   : "lHwyv5cUNYAWhu11aDIpa9",
+                GETUI_APP_SECRET: "1EDjlAfRU88poHC8e5Qjg1"
+        ]
     }
 
 
@@ -96,4 +101,5 @@ dependencies {
     implementation files('libs/open_sdk_r5923_lite.jar')
     implementation 'com.umeng.analytics:analytics:6.1.3'
     implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:1.4.0'
+    implementation files('libs/GetuiSDK2.10.2.0.jar')
 }

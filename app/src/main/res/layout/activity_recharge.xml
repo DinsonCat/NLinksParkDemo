@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:button="@null"
+            android:visibility="gone"
             android:checked="true"
             android:textColor="@color/text_primary"
             android:drawableLeft="@mipmap/cz_wx"

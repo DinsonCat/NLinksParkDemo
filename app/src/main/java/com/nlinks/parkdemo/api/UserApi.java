@@ -7,6 +7,7 @@ import com.nlinks.parkdemo.entity._req.UpdateSex;
 import com.nlinks.parkdemo.entity._req.Updatepwd;
 import com.nlinks.parkdemo.entity.user.LoginResultData;
 import com.nlinks.parkdemo.entity.user.RegisterResult;
+import com.nlinks.parkdemo.entity.user.SmsCode;
 import com.nlinks.parkdemo.entity.user.UserInfo;
 import com.nlinks.parkdemo.http.HttpResult;
 
@@ -46,8 +47,8 @@ public interface UserApi {
     /**
      * 获取手机验证码
      */
-    @GET("api/user/smsCode")
-    Observable<HttpResult<Void>> getCode(@Query("phoneNo") String phoneNo, @Query("accessKey") String accessKey);
+    @POST("api/user/smsVerifyCode")
+    Observable<HttpResult<Void>> getCode(@Body SmsCode code);
 
     /**
      * 获取用户信息
